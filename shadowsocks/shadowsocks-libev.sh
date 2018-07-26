@@ -34,6 +34,7 @@ set -ex; \
     firewall-cmd --reload
 # start shadowsocks-libev
 set -ex; \
+    echo systemctl start shadowsocks-libev >> /etc/rc.local; \
     systemctl start shadowsocks-libev; \
     systemctl status shadowsocks-libev; \
     echo ${CFG}
